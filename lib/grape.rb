@@ -110,10 +110,18 @@ module Grape
     eager_autoload do
       autoload :Hash
     end
+
     module ActiveSupport
       extend ::ActiveSupport::Autoload
       eager_autoload do
         autoload :HashWithIndifferentAccess
+      end
+    end
+
+    module ActionController
+      extend ::ActiveSupport::Autoload
+      eager_autoload do
+        autoload :Parameters
       end
     end
 
